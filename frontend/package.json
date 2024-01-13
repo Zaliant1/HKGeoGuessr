@@ -4,12 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm run vite -- --port 3000 & pnpm run nodemon",
+    "dev": "pnpm run vite",
     "build": "vite build",
     "serve": "vite preview",
-    "start": "node src/api/index.cjs",
-    "vite": "vite",
-    "nodemon": "nodemon src/api/index.cjs"
+    "vite": "vite"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
