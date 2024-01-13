@@ -7,9 +7,9 @@
     "dev": "pnpm run vite -- --port 3000 & pnpm run nodemon",
     "build": "vite build",
     "serve": "vite preview",
-    "start": "node server.js",
+    "start": "node src/server/server.cjs",
     "vite": "vite",
-    "nodemon": "nodemon src/server/server.js"
+    "nodemon": "nodemon src/server/server.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
