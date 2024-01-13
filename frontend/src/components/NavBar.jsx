@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { themeGetter } from "../utils";
+import React, { useState, useContext } from "react";
 import { Outlet } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 import {
   AppBar,
   Box,
@@ -10,28 +10,26 @@ import {
   MenuItem,
 } from "@mui/material";
 
-type ThemeType = "hollowKnight" | "silksong";
-
-export const NavBar: React.FC = () => {
-  const [customTheme, setTheme] = useState<ThemeType>("hollowKnight");
+export const NavBar = () => {
+  const { theme, switchMode } = useContext(ThemeContext);
 
   return (
     <div>
       <AppBar
         position="static"
-        sx={{ backgroundColor: themeGetter(customTheme) }}
+        sx={{ backgroundColor: theme.palette.default.main }}
       >
         <Toolbar>
           <Grid container>
             <Grid item lg={6} textAlign="center">
-              <MenuItem onClick={() => setTheme("hollowKnight")}>
+              <MenuItem onClick={() => switchMode("hollowKnight")}>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                   Hollow Knight
                 </Typography>
               </MenuItem>
             </Grid>
             <Grid item lg={6} textAlign="center">
-              <MenuItem onClick={() => setTheme("silksong")}>
+              <MenuItem onClick={() => switchMode("silksong")}>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                   Silksong
                 </Typography>

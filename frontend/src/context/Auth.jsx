@@ -2,14 +2,10 @@ import axios from "axios";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface UserProviderProps {
-  children: ReactNode;
-}
+export const UserContext = createContext();
 
-export const UserContext = createContext<string | null>(null);
-
-export const UserProvider: React.FC<UserProviderProps> = (props) => {
-  const [userInfo, setUserInfo] = useState<string | null>(null);
+export const UserProvider = (props) => {
+  const [userInfo, setUserInfo] = useState();
   const navigate = useNavigate();
   console.log(userInfo);
 

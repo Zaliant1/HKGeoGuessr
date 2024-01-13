@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export const Problem: React.FC = () => {
-  const [problem, setProblem] = useState<object>({});
+export const Problem = () => {
+  const [problem, setProblem] = useState({});
 
   useEffect(() => {
     if (!problem) {
