@@ -1,17 +1,14 @@
-// import express from "express";
 const express = require("express");
-const axios = require("axios");
-// import axios from "axios";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5050;
 
-const api = require("./routes/index.cjs");
+const api = require("./routes/index.js");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("yipee");
 });
 
