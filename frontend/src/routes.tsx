@@ -1,13 +1,15 @@
+// AppRoutes.tsx
 import React from "react";
-import { HomePage } from "./pages/HomePage.tsx";
-import { Map } from "./components/Map.tsx";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+import { HomePage } from "./pages/HomePage";
 
-export const AppRoutes = () => {
+export const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route element={<HomePage />} path="/" />
-      <Route element={<Map />} path="/image" />
+      <Route path="/" element={<NavBar />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
     </Routes>
   );
 };

@@ -4,15 +4,19 @@ import { UserProvider } from "./context/Auth";
 
 import { AppRoutes } from "./routes";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./themes";
 
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
-        <UserProvider>
-          <AppRoutes />
-        </UserProvider>
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <UserProvider>
+            <AppRoutes />
+          </UserProvider>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 };

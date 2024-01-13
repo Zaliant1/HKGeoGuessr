@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { theme } from "./themes"; // Update the path accordingly
+
 export const isCorrectWithinLeniency = (
   clickedX: number,
   clickedY: number,
@@ -10,4 +12,8 @@ export const isCorrectWithinLeniency = (
   const withinY = Math.abs(clickedY - correctCoords.y) <= 1;
 
   return withinX && withinY;
+};
+
+export const themeGetter = (customTheme: "hollowKnight" | "silksong") => {
+  return theme.palette[customTheme].main;
 };
