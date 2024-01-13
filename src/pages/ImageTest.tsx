@@ -8,7 +8,7 @@ interface ImageGridProps {
   columns: number;
 }
 
-const ImageTest: React.FC<ImageGridProps> = ({ imageUrl, rows, columns }) => {
+export const ImageTest: React.FC<ImageGridProps> = ({ imageUrl, rows, columns }) => {
   const containerRef = useRef(null);
 
   const gridItems = [];
@@ -73,4 +73,3 @@ const ImageTest: React.FC<ImageGridProps> = ({ imageUrl, rows, columns }) => {
   );
 };
 
-export default ImageTest;
